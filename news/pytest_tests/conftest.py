@@ -72,7 +72,7 @@ def many_news():
         )
         for index in range(settings.NEWS_COUNT_ON_HOME_PAGE + 1)
     ]
-    
+
     return News.objects.bulk_create(all_news)
 
 
