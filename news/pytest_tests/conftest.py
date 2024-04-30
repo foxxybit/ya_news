@@ -86,3 +86,10 @@ def many_comments(news, author):
         many_comments.created = now + timedelta(days=index)
         many_comments.save()
     return many_comments
+
+
+@pytest.fixture
+def form_data():
+    return {
+        'text': 'Новый текст'
+    }

@@ -35,7 +35,8 @@ def test_pages_availability_for_anonymous_user(client, name, args):
     ('news:edit', 'news:delete'),
 )
 def test_availability_for_comment_edit_and_delete(
-        parametrized_client, name, id_comment_for_args, expected_status):
+        parametrized_client, name, id_comment_for_args, expected_status
+    ):
     url = reverse(name, args=id_comment_for_args)
     response = parametrized_client.get(url)
     assert response.status_code == expected_status
@@ -46,7 +47,8 @@ def test_availability_for_comment_edit_and_delete(
     ('news:edit', 'news:delete'),
 )
 def test_redirect_for_anonymous_client(
-        client, name, id_comment_for_args):
+        client, name, id_comment_for_args
+    ):
     login_url = reverse('users:login')
     url = reverse(name, args=id_comment_for_args)
     expected_url = f'{login_url}?next={url}'
